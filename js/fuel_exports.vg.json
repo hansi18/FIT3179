@@ -10,7 +10,7 @@
         "url":"https://raw.githubusercontent.com/hansi18/FIT3179/main/js/ne_110m_admin_0_countries.topojson",
         "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
       },
-      "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "white"}
+      "mark": {"type": "geoshape", "fill": "white", "stroke": "grey"}
       },
         {
           "data":{
@@ -29,7 +29,7 @@
               "field": "Export (US$ Thousand)",
               "type": "quantitative",
               "title": "Export Product share",
-              "scale": {"scheme": "reds"}
+              "scale": {"scheme": "yelloworangebrown"}
             }
           }
         }
