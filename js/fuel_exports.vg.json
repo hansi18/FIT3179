@@ -11,6 +11,27 @@
         "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
       },
       "mark": {"type": "geoshape", "fill": "white", "stroke": "black"}
-      }
+      },
+        {
+          "data":{
+              "url": "https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/data/fuel_export_data.csv"
+          },
+            "mark": {"type": "circle", "tooltip": {"content": "data"}},
+            "encoding": {
+            "longitude": {"field": "longitude", "type": "quantitative"},
+            "latitude": {"field": "latitude", "type": "quantitative"},
+            "size": {
+              "field": "Export (US$ Thousand)",
+              "type": "quantitative",
+              "title": "Exports in US$"
+            },
+            "color": {
+              "field": "Export Product Share (%)",
+              "type": "quantitative",
+              "title": "Export Product share",
+              "scale": {"scheme": "reds"}
+            }
+          }
+        }
     ]
   }
