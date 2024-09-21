@@ -18,8 +18,8 @@
           },
             "mark": {"type": "circle", "tooltip": {"content": "data"}},
             "encoding": {
-            "longitude": {"field": "longitude", "type": "quantitative"},
-            "latitude": {"field": "latitude", "type": "quantitative"},
+            "longitude": {"field": "Longitude", "type": "quantitative"},
+            "latitude": {"field": "Latitude", "type": "quantitative"},
             "size": {
               "field": "Export (US$ Thousand)",
               "type": "quantitative",
