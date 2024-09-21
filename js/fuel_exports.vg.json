@@ -23,12 +23,12 @@
             "size": {
               "field": "Export Product Share (%)",
               "type": "quantitative",
-              "title": "Exports in US$"
+              "title": "Export product shares"
             },
             "color": {
               "field": "Export (US$ Thousand)",
               "type": "quantitative",
-              "title": "Export Product share",
+              "title": "Exports in US$ (thousands)",
               "scale": {"scheme": "yelloworangebrown"}
             }
           }
