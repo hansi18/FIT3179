@@ -1,0 +1,135 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 500,
+  "title": "Types of Fuel Production",
+  "data": {
+    "url": "https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/week%2010/data/primary%20production%20by%20fuel%20type.csv"
+  },
+  "params": [
+    {
+      "name": "yearRange",
+      "value": 1990,
+      "bind": {
+        "input": "range",
+        "min": 1990,
+        "max": 2017,
+        "step": 1,
+        "name": "Select Year Range: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "fold": [
+        "Natural Gas",
+        "Crude Oil",
+        "Coal And Coke",
+        "Biodiesel",
+        "Hydropower",
+        "Biomass",
+        "Biogas",
+        "Solar"
+      ],
+      "as": ["Fuel Type", "Tons of Oil Produced"]
+    },
+    {
+      "filter": "year(datum.Year) >= yearRange"
+    }
+  ],
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "timeUnit": "year",
+          "title": "Year"
+        },
+        "y": {
+          "field": "Tons of Oil Produced",
+          "type": "quantitative",
+          "title": "Kilotonnes of Oil Equivalent (ktoe)",
+          "scale": {
+            "type": "pow",
+            "exponent": 0.6,
+            "nice": true
+          },
+          "axis": {
+            "format": ".0f"
+          }
+        },
+        "color": {
+          "field": "Fuel Type",
+          "type": "nominal",
+          "title": "Type of Oil",
+          "scale": {
+            "domain": [
+              "Natural Gas",
+              "Crude Oil",
+              "Coal And Coke",
+              "Biodiesel",
+              "Hydropower",
+              "Biomass",
+              "Biogas",
+              "Solar"
+            ],
+            "range": [
+              "#1f77b4",
+              "#ff7f0e",
+              "#dbdb44",
+              "#d62728",
+              "#9467bd",
+              "#8c564b",
+              "#e377c2",
+              "#7f7f7f"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "mark": "circle",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "timeUnit": "year"
+        },
+        "y": {
+          "field": "Tons of Oil Produced",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Fuel Type",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {"field": "Year", "type": "temporal", "timeUnit": "year"},
+          {"field": "Fuel Type", "type": "nominal"},
+          {"field": "Tons of Oil Produced", "type": "quantitative"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "color":"gray",
+        "fontWeight":"lighter"
+      },
+      "encoding": {
+        "text": {
+          "value": "Natural gas and crude oil are the most produced oils in Malaysia"
+        },
+        "x": {
+          "value": 330  
+        },
+        "y": {
+          "value": 150  
+        } 
+      }
+    }
+  ]
+}
