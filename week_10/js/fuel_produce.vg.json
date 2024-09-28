@@ -4,7 +4,7 @@
   "height": 500,
   "title": "Types of Fuel Production",
   "data": {
-    "url": "https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/week%2010/data/primary%20production%20by%20fuel%20type.csv"
+    "url": "https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/week_10/data/primary%20production%20by%20fuel%20type.csv"
   },
   "params": [
     {
