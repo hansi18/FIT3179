@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 500,
-  "height": 500,
+  "height": 300,
   "title": "Types of Fuel Production",
   "data": {
     "url": "https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/week_10/data/primary%20production%20by%20fuel%20type.csv"
@@ -115,20 +115,25 @@
     {
       "mark": {
         "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dy": -55,
+        "dx":240,
         "fontSize": 12,
-        "color":"gray",
-        "fontWeight":"lighter"
+        "fontStyle": "italic"
       },
       "encoding": {
         "text": {
           "value": "Natural gas and crude oil are the most produced oils in Malaysia"
         },
-        "x": {
-          "signal": "width / 2" 
-        },
-        "y": {
-          "signal": "height / 4"  
-        } 
+        "color": {"value": "gray"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Fuel Type'] == 'Natural Gas' && datum['Year'] == 2000",
+            "value": 1
+          },
+          "value": 0.3
+        }
       }
     }
   ]
