@@ -7,14 +7,14 @@
     "layer": [
       {
         "data": {
-        "url":"https://raw.githubusercontent.com/hansi18/FIT3179/main/js/ne_110m_admin_0_countries.topojson",
+        "url":"https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/week_10/js/ne_110m_admin_0_countries.topojson",
         "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
       },
       "mark": {"type": "geoshape", "fill": "white", "stroke": "grey"}
       },
         {
           "data":{
-              "url": "https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/data/fuel_export_data.csv"
+              "url": "https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/week_10/data/fuel_export_data.csv"
           },
             "mark": {"type": "circle", "tooltip": {"content": "data"}},
             "encoding": {
