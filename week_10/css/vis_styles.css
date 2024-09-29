@@ -18,13 +18,10 @@ h2 {
   font-family: 'Open Sans', sans-serif; 
 }
 
-.pure-g {
+.pure-u-1-2 {
   display: flex;                      
   justify-content: space-between;     
-  flex-wrap: wrap;                    
-}
-
-.pure-u-1-2 {
+  flex-wrap: wrap;  
   width: 48%;                         
   margin-bottom: 20px;                
 }
