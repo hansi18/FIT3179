@@ -2,31 +2,28 @@
 <html>
 
 <head>
-  <title>Multiple Visualisations | An Example</title>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <title>Fuel Industry in Malaysia</title>
+  
+  <!-- Meta tag for responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Import Vega & Vega-Lite -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
-  <!-- Import pure.css -->
-   <link rel="stylesheet" type="text/css" href="css/vis_styles.css" media="all">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Import CSS -->
+  <link rel="stylesheet" type="text/css" href="css/vis_styles.css" media="all">
 
   <!-- Google font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
-  <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-
 
 </head>
 
 <body>
 
   <div class="page">
-
+    
     <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-1">
@@ -42,7 +39,6 @@
           <h2>Fuel production in Malaysia</h2>
           <p>The first column contains text and the second column contains a visualisation.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
         </div>
       </div>
@@ -51,7 +47,6 @@
       </div>
     </div>
     <!-- end pure grid group -->
-
 
     <!-- pure grid group -->
     <div class="pure-g">
@@ -63,7 +58,6 @@
           <h2>Fuel exports from Malaysia in 2021</h2>
           <p>The first column contains text and the second column contains a visualisation.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
         </div>
       </div>
@@ -72,11 +66,10 @@
 
     <div class="pure-g">
       <div class="pure-u-1-1 small-font">
-        <p>This visualisation is created by <a href="https://hansi18.github.io/FIT3179/" target="_blank">Hansikaa Aggarwal
-        </a>. The datasource is <a href="#" target=" _blank">some data repository online</href>.</p>
+        <p>This visualisation is created by <a href="https://hansi18.github.io/FIT3179/" target="_blank">Hansikaa Aggarwal</a>.
+          The datasource is <a href="#" target="_blank">some data repository online</a>.</p>
       </div>
     </div>
-
 
   </div> <!-- end page -->
 
@@ -85,18 +78,18 @@
     var specVis2 = "js/fuel_produce.vg.json";
 
     vegaEmbed('#vis1', specVis1, { 
-      "width": 400,  // Set desired width
-      "height": 300, // Set desired height
-      "actions": false });
+      "width": 400,  
+      "height": 300, 
+      "actions": false 
+    });
 
-    vegaEmbed('#vis2', specVis2, {
+    vegaEmbed('#vis2', specVis2, { 
       "width": 500,  // Set desired width
       "height": 500, // Set desired height
       "actions": false 
-    }).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).then(function(result) {
+      // Access the Vega view instance
     }).catch(console.error);
-
   </script>
 </body>
 
