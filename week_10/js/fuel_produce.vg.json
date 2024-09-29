@@ -124,10 +124,10 @@
           "value": "Natural gas and crude oil are the most produced oils in Malaysia"
         },
         "x": {
-          "value": 330  
+          "signal": "width / 2" 
         },
         "y": {
-          "value": 150  
+          "signal": "height / 4"  
         } 
       }
     }
