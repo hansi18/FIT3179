@@ -1,0 +1,106 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 700,
+  "height": 400,
+  "padding": 5,
+
+  "data": [
+    {
+      "name": "fuelConsumption",
+      "url": "https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/final/data/Crude%20Oil%20%20Products%20-%20Consumption.csv",
+      "format": {"type": "csv", "parse": "auto"},
+      "transform": [
+        {
+          "type": "fold",
+          "fields": ["Non-Energy", "LPG", "Diesel", "Kerosene", "Refinery Gas", "ATF and AV Gas", "Fuel Oil", "Motor Petrol"],
+          "as": ["fuel_type", "value"]
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "xscale",
+      "type": "band",
+      "range": "width",
+      "domain": {"data": "fuelConsumption", "field": "Year"}
+    },
+    {
+      "name": "yscale",
+      "type": "band",
+      "range": "height",
+      "domain": {"data": "fuelConsumption", "field": "fuel_type"}
+    },
+    {
+      "name": "color",
+      "type": "linear",
+      "range": ["#f7e3c1", "#a16805"],
+      "domain": {"data": "fuelConsumption", "field": "value"},
+      "zero": true,
+      "nice": true
+    }
+  ],
+
+  "signals": [
+    {
+      "name": "fuelType",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", "Non-Energy", "LPG", "Diesel", "Kerosene", "Refinery Gas", "ATF and AV Gas", "Fuel Oil", "Motor Petrol"],
+        "name": "Select Fuel Type: "
+      }
+    }
+  ],
+
+  "axes": [
+    {
+      "orient": "bottom",
+      "scale": "xscale",
+      "title": "Year",
+      "labelFontSize": 12
+    },
+    {
+      "orient": "left",
+      "scale": "yscale",
+      "title": "Fuel Type",
+      "labelFontSize": 12
+    }
+  ],
+
+  "legends": [
+    {
+      "fill": "color",
+      "title": "Fuel Consumption in ktoe",
+      "orient": "right",
+      "type": "gradient",
+      "titleFontSize": 12,
+      "labelFontSize": 12
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "rect",
+      "from": {"data": "fuelConsumption"},
+      "encode": {
+        "enter": {
+          "x": {"scale": "xscale", "field": "Year"},
+          "y": {"scale": "yscale", "field": "fuel_type"},
+          "width": {"scale": "xscale", "band": 1},
+          "height": {"scale": "yscale", "band": 1},
+          "fill": {"scale": "color", "field": "value"},
+          "tooltip": {
+            "signal": "{'Year': datum.Year, 'Fuel Type': datum.fuel_type, 'Fuel Consumption in ktoe': datum.value}"
+          }
+        },
+        "update": {
+          "fillOpacity": {
+            "signal": "fuelType === 'All' || datum.fuel_type === fuelType ? 1 : 0"
+          }
+        }
+      }
+    }
+  ]
+}
