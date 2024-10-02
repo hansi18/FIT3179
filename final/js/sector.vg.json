@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width":250,
+  "height":300,
+  "title": "Energy Consumption by Sector",
+  "data": {
+    "url": "https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/final/data/sectors.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "mark": {
+    "type": "arc",
+    "innerRadius": 50
+  },
+  "encoding": {
+    "theta": {
+      "field": "Value",  
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Sector",  
+      "type": "nominal",
+      "legend": {"title": "Sectors"},
+      "scale": {
+            "domain": [
+              "Non energy",
+              "Agriculture",
+              "Transport",
+              "Industrial",
+              "Commercial",
+              "Residential",
+              "Co-generation",
+              "Power station"
+            ],
+            "range": [
+              "#1f77b4",
+              "#ff7f0e",
+              "#dbdb44",
+              "#d62728",
+              "#9467bd",
+              "#8c564b",
+              "#e377c2",
+              "#7f7f7f"
+            ]
+          }
+    },
+     "tooltip": [
+          {"field": "Sector", "type": "nominal"},
+          {"field": "Value", "type": "quantitative", "title":"Consumption in ktoe"}
+        ]
+  },
+  "transform": [
+    {
+      "filter": "datum.Sector !== null" 
+    }
+  ],
+  "view": {
+    "stroke": null
+  }
+}
