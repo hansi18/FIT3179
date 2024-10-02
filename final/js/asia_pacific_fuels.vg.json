@@ -1,0 +1,75 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width":500,
+  "height":300,
+  "title": "Oil production for different countries in the Asia Pacific region",
+  "data": {
+    "url": "https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/final/data/Crude%20oil%20production%2C%20Asia%20Pacific.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+   "transform": [
+    {
+      "filter": "datum['Crude oil'] > 0"
+    },
+    {
+      "calculate": "datum['Crude oil']",
+      "as": "production"
+    },
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "groupby": []  
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "width":2,
+        "tooltip": true  
+      },
+      "encoding": {
+        "x": {
+          "field": "ISO3",
+          "type": "nominal",
+          "title": "Country",
+          "axis": {
+            "labelAngle": 45  
+          }
+        },
+        "y": {
+          "field": "production",
+          "type": "quantitative",
+          "title": "Crude Oil Production (TJ)"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",  
+        "strokeWidth": 2,  
+        "size": 100         
+      },
+      "encoding": {
+        "x": {
+          "field": "ISO3",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "production",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {"field": "ISO3", "type": "nominal", "title": "Country"},
+          {"field": "production", "type": "quantitative", "title": "Oil Production (TJ)"},{"field": "rank", "type": "quantitative", "title": "Rank"}
+        ]
+      }
+    }
+  ]
+}
