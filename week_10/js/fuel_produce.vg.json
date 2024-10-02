@@ -39,13 +39,12 @@
   ],
   "layer": [
     {
-      "mark": "line",
+      "mark": "circle",
       "encoding": {
         "x": {
           "field": "Year",
           "type": "temporal",
-          "timeUnit": "year",
-          "title": "Year"
+          "timeUnit": "year"
         },
         "y": {
           "field": "Tons of Oil Produced",
@@ -63,7 +62,7 @@
         "color": {
           "field": "Fuel Type",
           "type": "nominal",
-          "title": "Type of Oil",
+          "title":"Type of oil",
           "scale": {
             "domain": [
               "Natural Gas",
@@ -86,24 +85,13 @@
               "#7f7f7f"
             ]
           }
-        }
-      }
-    },
-    {
-      "mark": "circle",
-      "encoding": {
-        "x": {
-          "field": "Year",
-          "type": "temporal",
-          "timeUnit": "year"
         },
-        "y": {
+        "size":{
           "field": "Tons of Oil Produced",
-          "type": "quantitative"
-        },
-        "color": {
-          "field": "Fuel Type",
-          "type": "nominal"
+          "type": "quantitative",
+          "scale": {
+            "range": [30, 450]  
+          }
         },
         "tooltip": [
           {"field": "Year", "type": "temporal", "timeUnit": "year"},
@@ -118,7 +106,7 @@
         "align": "right",
         "baseline": "middle",
         "dy": -55,
-        "dx":240,
+        "dx":250,
         "fontSize": 12,
         "fontStyle": "italic"
       },
