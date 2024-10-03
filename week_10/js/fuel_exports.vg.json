@@ -30,7 +30,12 @@
               "type": "quantitative",
               "title": "Exports in US$ (thousands)",
               "scale": {"scheme": "yelloworangebrown"}
-            }
+            },
+            "tooltip":[
+              {"field":"Partner Name", "type":"nominal","title":"Country name"},
+              {"field":"Export (US$ Thousand)","type":"nominal"},
+              {"field":"Export Product Share (%)","type": "nominal"}
+            ]
           }
         }
     ]
