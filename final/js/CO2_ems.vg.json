@@ -1,0 +1,62 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "CO2 Emission per Capita (Tonnes)",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/final/data/CO2%20ems.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "mark": {
+    "type": "area",
+    "line": {"color": "darkgray"}
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal",
+      "axis": {"title": "Year"},
+      "timeUnit": "year"
+    },
+    "y": {
+      "field": "CO2 emission per capita (tonnes)",
+      "type": "quantitative",
+      "axis": {"title": "CO2 Emission per Capita (Tonnes)"}
+      
+    },
+    "color": {
+          "field": "Country",
+          "type": "nominal",
+          "title": "Country",
+           "scale": {
+            "domain": [
+              "Malaysia",
+              "Singapore",
+              "Brunei",
+              "Myanmar",
+              "Philippines",
+              "Indonesia",
+              "Thailand",
+              "Vietnam"
+            ],
+            "range": [
+              "#1f77b4",
+              "#ff7f0e",
+              "#dbdb44",
+              "#d62728",
+              "#9467bd",
+              "#8c564b",
+              "#e377c2",
+              "#737874"
+            ]
+          }
+        },
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {"field": "Year", "type": "temporal","timeUnit": "year"},
+      {"field": "CO2 emission per capita (tonnes)", "type": "quantitative"}
+    ]
+  }
+}
