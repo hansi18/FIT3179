@@ -21,3 +21,5 @@ https://www.iea.org/regions/asia-pacific/oil
 https://km.anm.gov.my/Aset%20Pengetahuan%20Bahagian/IPN/UMUM/MONOGRAF%20PENYELIDIKAN%202023/Final_Digital_Oil%20Rents%20and%20Primary%20Government%20Expenditure%20Budget.pdf
 
 https://meih.st.gov.my/documents/10620/0533ae61-2fd0-4c67-bdf9-07c51c468840
+
+https://ourworldindata.org/co2/country/malaysia?country=~VNM
