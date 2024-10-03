@@ -9,6 +9,19 @@
       "type": "csv"
     }
   },
+  "transform": [
+    {
+      "filter": "datum.Sector !== null" 
+    }
+  ],
+  "selection": {
+  "sector_highlight": {
+  "type": "multi",
+  "fields": ["Sector"],
+  "bind": "legend"
+  }
+  },
+
   "mark": {
     "type": "arc",
     "innerRadius": 50
@@ -21,7 +34,7 @@
     "color": {
       "field": "Sector",  
       "type": "nominal",
-      "legend": {"title": "Sectors"},
+      "legend": {"title": "Choose Sectors"},
       "scale": {
             "domain": [
               "Non energy",
@@ -45,16 +58,16 @@
             ]
           }
     },
+    "opacity": {
+    "condition": {"selection": "sector_highlight", "value": 0.8},
+    "value": 0.2
+    },
+
      "tooltip": [
           {"field": "Sector", "type": "nominal"},
           {"field": "Value", "type": "quantitative", "title":"Consumption in ktoe"}
         ]
   },
-  "transform": [
-    {
-      "filter": "datum.Sector !== null" 
-    }
-  ],
   "view": {
     "stroke": null
   }
