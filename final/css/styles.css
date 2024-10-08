@@ -40,12 +40,14 @@ h2 {
 .pure-g {
   display: flex;                       
   justify-content: space-between;     
-  flex-wrap: wrap;  
+  flex-wrap: wrap;                    
 }
 
 .pure-u-1-2 {
-  flex: 1 1 48%; 
-  margin-bottom: 20px;                
+  width: 50%;                         
+  box-sizing: border-box;             
+  padding: 10px;                       
+  margin: 0;                           /
 }
 
 .description-left p {
