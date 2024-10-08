@@ -61,12 +61,21 @@
       </p>
     </div>
     </div>
+    
+         <div class='pure-g'>    
+      <h3>Fuel exports from Malaysia</h3>
+      <p>Malaysia is a significant exporter of fuel, particularly petroleum and liquefied natural gas (LNG). The country's abundant oil and gas reserves have made it a key player in global energy markets. Crude oil, refined petroleum products, and LNG are among Malaysia's top fuel exports, with major export destinations including China, Japan, and South Korea. The fuel export sector is vital to Malaysia's economy, contributing substantially to national revenue and supporting the country's development as a regional energy hub.
+      </p>
+        
+    <div id="vis3" class="vis-container"></div>
+    </div>
   </div>
  </div>
 
   <script type="text/javascript">
     var specVis1 = "js/asia_pacific_fuels.vg.json";
-    var specVis2 = "js/fuel_produce.vg.json"
+    var specVis2 = "js/fuel_produce.vg.json";
+    var specVis3 = "js/fuel_exports.vg.json"
 
     vegaEmbed('#vis1', specVis1, { 
       "width": 400,  
@@ -75,6 +84,12 @@
     });
 
     vegaEmbed('#vis2', specVis2, { 
+      "actions": false 
+    }).then(function(result) {
+      // Access the Vega view instance
+    }).catch(console.error);
+    
+    vegaEmbed('#vis3', specVis3, { 
       "actions": false 
     }).then(function(result) {
       // Access the Vega view instance
