@@ -98,6 +98,13 @@
       <div id="vis6" class="vis-container"></div>
     </div>
     </div>
+    <div class='pure-g'>    
+      <h3>Comparison of CO2 Emissions of Different Countries</h3>
+      <p>CO2 emissions in Malaysia are primarily attributed to the heavy reliance on fossil fuels, particularly oil and natural gas, for energy production. The industrial sector, especially manufacturing and palm oil production, contributes significantly to emissions due to energy-intensive processes. Additionally, transportation, driven by increasing vehicle ownership, adds to the carbon footprint. Deforestation and land-use changes for agriculture, particularly palm oil plantations, further exacerbate emissions by reducing forest cover. Efforts to mitigate these emissions focus on transitioning to renewable energy and improving energy efficiency, but economic growth and energy demand remain significant challenges.
+      </p>
+        
+    <div id="vis7" class="vis-container"></div>
+    </div>
   </div>
  </div>
 
@@ -108,6 +115,7 @@
     var specVis4 = "js/revenue.vg.json";
     var specVis5 = "js/fuel_consumption.vg.json";
     var specVis6 = "js/sector.vg.json";
+    var specVis7 = "js/CO2_ems.vg.json";
 
 
 
@@ -146,5 +154,11 @@
       "height": 300, 
       "actions": false 
     });
+    
+    vegaEmbed('#vis7', specVis7, { 
+      "actions": false 
+    }).then(function(result) {
+      // Access the Vega view instance
+    }).catch(console.error);
   </script>
 </html>
