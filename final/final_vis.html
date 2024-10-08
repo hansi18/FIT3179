@@ -34,15 +34,31 @@
     <div class='pure-u-1-2'>
       <h3>Comparison of oil producing countries</h3>
       <p>Malaysia’s most valuable mineral resources are its reserves of petroleum and natural gas. Crude oil, refined petroleum, and, more recently,
-        liquefied natural gas (LNG) together account for a major portion of the country’s commodity export earnings. 
-      </p>
-      <p>
-        Most of crude oil is produced in Sabah (42%), Peninsular malaysia (32%) and Sarawak (26%). These oil production helped Malaysia to stand at 
-        4th place in oil producing countries of Asia pacific region and 2nd in South east asia after Indonesia.
+        liquefied natural gas (LNG) together account for a major portion of the country’s commodity export earnings. </p>
+        <p>       
+        
+        Most of crude oil is produced
+        in Sabah (42%), Peninsular malaysia (32%) and Sarawak (26%). These oil production helped Malaysia to stand at 4th place in oil producing countries 
+        of Asia pacific region and 2nd in South east asia after Indonesia.
       </p>
     </div>
     <div class='pure-u-1-2'>
       <div id="vis1" class="vis-container"></div>
+    </div>
+    </div>
+    
+      <div class='pure-g'>
+        <div class='pure-u-1-2'>
+      <div id="vis2" class="vis-container"></div>
+    </div>
+    <div class='pure-u-1-2'>
+      <h3>Primary fuels produced in Malaysia</h3>
+      <p>Malaysia, one of the largest fuel and oil producers in the world, is primarily known for its crude oil and natural gas production, largely due to its advantageous geographical location. The country consists of two non-contiguous regions separated by the South China Sea: Peninsular Malaysia and East Malaysia. 
+      </p>
+        <p>       
+        
+        This geographical division also reflects in the energy market, where oil and gas reserves are found in remote, dispersed areas, far from the high-consumption regions of the Malay Peninsula. As a result, Malaysia’s energy market is segmented into two sub-units: offshore platforms and underwater gas pipelines along West Malaysia’s eastern coast supply the domestic market, while fields in northern East Malaysia primarily export to the international market.
+      </p>
     </div>
     </div>
   </div>
@@ -50,12 +66,19 @@
 
   <script type="text/javascript">
     var specVis1 = "js/asia_pacific_fuels.vg.json";
+    var specVis2 = "js/fuel_produce.vg.json"
 
     vegaEmbed('#vis1', specVis1, { 
-      "width": 500,  
+      "width": 400,  
       "height": 250, 
       "actions": false 
     });
+
+    vegaEmbed('#vis2', specVis2, { 
+      "actions": false 
+    }).then(function(result) {
+      // Access the Vega view instance
+    }).catch(console.error);
 
   </script>
 </html>
