@@ -50,18 +50,11 @@ h2 {
   margin: 0;                           
 }
 
-#vis3{
+#vis3,vis4,vis5{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-#vis4{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 
 .description-left p {
   font-size: 1.1em;                   
