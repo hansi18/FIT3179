@@ -84,6 +84,20 @@
         
     <div id="vis5" class="vis-container"></div>
     </div>
+    
+    <div class='pure-g'>
+    <div class='pure-u-1-2'>
+      <h3>Oil consumed by different sectors</h3>
+      <p>In Malaysia, fuel consumption varies significantly across different sectors, reflecting the country's diverse economic activities. The transportation sector is one of the largest consumers of fuel, primarily relying on petroleum products for both personal and commercial vehicles. The industrial sector follows closely, utilizing fuel for manufacturing processes and operations. Residential and commercial sectors also contribute to fuel consumption, particularly through the use of natural gas for cooking and heating.  </p>
+        <p>       
+        
+         Overall, the diverse fuel consumption patterns across these sectors underscore Malaysia's reliance on fossil fuels while highlighting the potential for transitioning to more sustainable energy sources.
+      </p>
+    </div>
+    <div class='pure-u-1-2'>
+      <div id="vis6" class="vis-container"></div>
+    </div>
+    </div>
   </div>
  </div>
 
@@ -93,6 +107,8 @@
     var specVis3 = "js/fuel_exports.vg.json";
     var specVis4 = "js/revenue.vg.json";
     var specVis5 = "js/fuel_consumption.vg.json";
+    var specVis6 = "js/sector.vg.json";
+
 
 
     vegaEmbed('#vis1', specVis1, { 
@@ -124,5 +140,11 @@
     }).then(function(result) {
       // Access the Vega view instance
     }).catch(console.error);
+    
+    vegaEmbed('#vis6', specVis6,{ 
+      "width": 300,  
+      "height": 300, 
+      "actions": false 
+    });
   </script>
 </html>
