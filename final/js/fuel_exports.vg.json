@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 450,
+    "title": "Fuel Exports from Malaysia in year 2021",
+    "projection": {"type": "equalEarth"},
+    "layer": [
+      {
+        "data": {
+        "url":"https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/week_10/js/ne_110m_admin_0_countries.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+      },
+      "mark": {"type": "geoshape", "fill": "white", "stroke": "grey"}
+      },
+        {
+          "data":{
+              "url": "https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/week_10/data/fuel_export_data.csv"
+          },
+            "mark": {"type": "circle", "tooltip": {"content": "data"}},
+            "encoding": {
+            "longitude": {"field": "Longitude", "type": "quantitative"},
+            "latitude": {"field": "Latitude", "type": "quantitative"},
+            "size": {
+              "field": "Export Product Share (%)",
+              "type": "quantitative",
+              "title": "Export product shares"
+            },
+            "color": {
+              "field": "Export (US$ Thousand)",
+              "type": "quantitative",
+              "title": "Exports in US$ (thousands)",
+              "scale": {"scheme": "yelloworangebrown"}
+            },
+            "tooltip":[
+              {"field":"Partner Name", "type":"nominal","title":"Country name"},
+              {"field":"Export (US$ Thousand)","type":"nominal"},
+              {"field":"Export Product Share (%)","type": "nominal"}
+            ]
+          }
+        }
+    ]
+  }
