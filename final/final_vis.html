@@ -69,13 +69,23 @@
         
     <div id="vis3" class="vis-container"></div>
     </div>
+    
+    <div class='pure-g'>    
+      <h3>Economic Impact and in Oil-Exporting Countries</h3>
+      <p>Oil rents play a significant role in the formulation of the PGEB (Petroleum-Government Expenditure Budget) for oil-exporting nations. However, tax collection remains a crucial source of revenue for all countries, including oil exporters. In fact, tax revenue is often the most important contributor to budget formulation. To fully understand the relationship between oil rents and the PGEB, both tax revenue and oil rents must be considered for Malaysia and other oil-exporting nations.
+      </p>
+        
+    <div id="vis4" class="vis-container"></div>
+    </div>
   </div>
  </div>
 
   <script type="text/javascript">
     var specVis1 = "js/asia_pacific_fuels.vg.json";
     var specVis2 = "js/fuel_produce.vg.json";
-    var specVis3 = "js/fuel_exports.vg.json"
+    var specVis3 = "js/fuel_exports.vg.json";
+    var specVis4 = "js/revenue.vg.json";
+
 
     vegaEmbed('#vis1', specVis1, { 
       "width": 400,  
@@ -95,5 +105,10 @@
       // Access the Vega view instance
     }).catch(console.error);
 
+     vegaEmbed('#vis4', specVis4, { 
+      "actions": false 
+    }).then(function(result) {
+      // Access the Vega view instance
+    }).catch(console.error);
   </script>
 </html>
