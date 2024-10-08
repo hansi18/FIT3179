@@ -50,7 +50,19 @@ h2 {
   margin: 0;                           
 }
 
-#vis3,vis4,vis5{
+#vis3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#vis4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#vis5{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,6 +71,13 @@ h2 {
 #vis6{
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  margin-right:100px;
+}
+
+#vis7{
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
