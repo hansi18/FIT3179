@@ -16,14 +16,18 @@
           "data":{
               "url": "https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/week_10/data/fuel_export_data.csv"
           },
-            "mark": {"type": "circle", "tooltip": {"content": "data"}},
+            "mark": {"type": "circle", 
+            "tooltip": {"content": "data"}},
             "encoding": {
             "longitude": {"field": "Longitude", "type": "quantitative"},
             "latitude": {"field": "Latitude", "type": "quantitative"},
             "size": {
               "field": "Export Product Share (%)",
               "type": "quantitative",
-              "title": "Export product shares"
+              "title": "Export product shares",
+              "scale": {
+            "range": [30, 450]  
+          }
             },
             "color": {
               "field": "Export (US$ Thousand)",
