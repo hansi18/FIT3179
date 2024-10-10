@@ -44,7 +44,8 @@
         "x": {
           "field": "Year",
           "type": "temporal",
-          "timeUnit": "year"
+          "timeUnit": "year",
+          "title":"Year"
         },
         "y": {
           "field": "Tons of Oil Produced",
@@ -75,14 +76,14 @@
               "Solar"
             ],
             "range": [
-              "#1f77b4",
-              "#ff7f0e",
-              "#dbdb44",
-              "#d62728",
-              "#9467bd",
-              "#8c564b",
-              "#e377c2",
-              "#7f7f7f"
+              "#a31208",
+              "#e6e283",
+              "#83e6d3",
+              "#883df2",
+              "#f23de0",
+              "#3220ba",
+              "#59585c",
+              "#aeb59a"
             ]
           }
         },
