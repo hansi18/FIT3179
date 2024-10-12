@@ -1,72 +1,123 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "CO2 Emission per Capita (Tonnes)",
-  "width": 800,
+  "width": 400,
   "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/final/data/CO2%20ems.csv",
-    "format": {
-      "type": "csv"
-    }
+    "format": {"type": "csv"}
   },
-  "mark": {
-    "type": "area",
-    "line": {"color": "darkgray"}
-  },
-  "selection": {
-    "CountrySelection": {
-      "type": "multi", 
-      "fields": ["Country"],
-      "bind": "legend"
-    }
-  },
-  "encoding": {
-    "x": {
-      "field": "Year",
-      "type": "temporal",
-      "axis": {"title": "Year"},
-      "timeUnit": "year"
+  "transform": [
+    {
+      "filter": "datum.Year == year_selection"
     },
-    "y": {
-      "field": "CO2 emission per capita (tonnes)",
-      "type": "quantitative",
-      "axis": {"title": "CO2 Emission per Capita (Tonnes)"}
-    },
-    "color": {
-      "field": "Country",
-      "type": "nominal",
-      "legend": {"title": "Choose Countries"},
-      "scale": {
-        "domain": [
-          "Malaysia",
-          "Singapore",
-          "Brunei",
-          "Myanmar",
-          "Philippines",
-          "Indonesia",
-          "Thailand",
-          "Vietnam"
-        ],
-        "range": [
-          "#1f77b4",
-          "#ff7f0e",
-          "#dbdb44",
-          "#d62728",
-          "#9467bd",
-          "#8c564b",
-          "#e377c2",
-          "#737874"
-        ]
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "CO2 emission per capita (tonnes)",
+          "as": "Total_CO2"
+        }
+      ],
+      "groupby": ["Country"]
+    }
+  ],
+  "params": [
+    {
+      "name": "year_selection",
+      "value": 2000,  
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2020,
+        "step": 1,
+        "name": "Select Year: "
       }
     },
-    "opacity": {
-      "condition": {"selection": "CountrySelection", "value": 0.75},
-      "value": 0.2
+    {
+      "name": "Country_selection",
+      "select": {
+        "type": "point",
+        "fields": ["Country"],
+        "on": "click"
+      }
     },
-    "tooltip": [
-      {"field": "Country", "type": "nominal"},
-      {"field": "Year", "type": "temporal", "timeUnit": "year"},
-      {"field": "CO2 emission per capita (tonnes)", "type": "quantitative"}
-    ]
-  }
+    {
+      "name": "Legend_highlight",
+      "select": {
+        "type": "point",
+        "fields": ["Country"]
+      },
+      "bind": "legend"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 20,
+        "stroke": "#fff",
+        "tooltip": true
+      },
+      "encoding": {
+        "theta": {
+          "field": "Total_CO2",
+          "type": "quantitative"
+        },
+        "radius": {
+          "field": "Total_CO2",
+          "scale": {
+            "type": "sqrt",
+            "range": [0, 160],
+            "zero": true
+          }
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Malaysia",
+              "Singapore",
+              "Brunei",
+              "Myanmar",
+              "Philippines",
+              "Indonesia",
+              "Thailand",
+              "Vietnam"
+            ],
+            "range": [
+              "#1f77b4",
+              "#ff7f0e",
+              "#dbdb44",
+              "#d62728",
+              "#9467bd",
+              "#8c564b",
+              "#e377c2",
+              "#737874"
+            ]
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "Legend_highlight",
+            "value": 0.9
+          },
+          "value": 0.2
+        },
+        "tooltip": [
+          {
+            "field": "Country",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
+            "field": "Total_CO2",
+            "type": "quantitative",
+            "title": "Total CO2 Emission (Tonnes)",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ]
 }
