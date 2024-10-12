@@ -152,7 +152,7 @@
             "tooltip": [
               {"field": "Country", "type": "nominal"},
               {"field": "Year", "title":"Year","type": "temporal", "timeUnit": "year"},
-              {"field": "Oil Rent", "type": "quantitative"}
+              {"field": "tax revenue", "type": "quantitative"}
             ]
           }
         }
@@ -223,7 +223,7 @@
             "tooltip": [
               {"field": "Country", "type": "nominal"},
               {"field": "Year", "title":"Year","type": "temporal", "timeUnit": "year"},
-              {"field": "Oil Rent", "type": "quantitative"}
+              {"field": "PGEB", "type": "quantitative"}
             ]
           }
         }
