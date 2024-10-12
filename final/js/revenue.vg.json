@@ -12,156 +12,222 @@
       "title": "Oil Rent per Year by Country",
       "width": 250, 
       "height": 200,
-      "mark": "line",
-      "encoding": {
-        "x": {
-          "field": "Year",
-          "type": "temporal",
-          "title": "Year",
-          "timeUnit": "year"
-        },
-        "y": {
-          "field": "Oil Rent",
-          "type": "quantitative",
-          "title": "Oil Rent"
-        },
-        "color": {
-          "field": "Country",
-          "type": "nominal",
-          "title": "Country",
-           "scale": {
-            "domain": [
-              "Malaysia",
-              "Kuwait",
-              "Suadi Arabia",
-              "Kazakhastan",
-              "Nigeria",
-              "Brazil",
-              "Russain Federation"
-            ],
-            "range": [
-              "#1f77b4",
-              "#ff7f0e",
-              "#dbdb44",
-              "#d62728",
-              "#9467bd",
-              "#8c564b",
-              "#e377c2"
-            ]
+      "layer": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "temporal",
+              "title": "Year",
+              "timeUnit": "year"
+            },
+            "y": {
+              "field": "Oil Rent",
+              "type": "quantitative",
+              "title": "Oil Rent"
+            },
+            "color": {
+              "field": "Country",
+              "type": "nominal",
+              "title": "Country",
+              "scale": {
+                "domain": [
+                  "Malaysia",
+                  "Kuwait",
+                  "Suadi Arabia",
+                  "Kazakhastan",
+                  "Nigeria",
+                  "Brazil",
+                  "Russain Federation"
+                ],
+                "range": [
+                  "#1f77b4",
+                  "#ff7f0e",
+                  "#dbdb44",
+                  "#d62728",
+                  "#9467bd",
+                  "#8c564b",
+                  "#e377c2"
+                ]
+              }
+            }
           }
         },
-        "tooltip": [
-          {"field": "Country", "type": "nominal"},
-          {"field": "Year", "type": "temporal","timeUnit": "year"},
-          {"field": "Oil Rent", "type": "quantitative"}
-        ]
-      }
+        {
+          "mark": "circle",
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "temporal",
+              "timeUnit": "year"
+            },
+            "y": {
+              "field": "Oil Rent",
+              "type": "quantitative"
+            },
+            "color": {
+              "field": "Country",
+              "type": "nominal"
+            },
+            "tooltip": [
+              {"field": "Country", "type": "nominal"},
+              {"field": "Year", "title":"Year","type": "temporal", "timeUnit": "year"},
+              {"field": "Oil Rent", "type": "quantitative"}
+            ]
+          }
+        }
+      ]
     },
     {
       "title": "Tax Revenue per Year by Country",
       "width": 250, 
       "height": 200,
-      "mark": "line",
-      "encoding": {
-        "x": {
-          "field": "Year",
-          "type": "temporal",
-          "title": "Year",
-          "timeUnit": "year"
-        },
-        "y": {
-          "field": "tax revenue",
-          "type": "quantitative",
-          "title": "Tax Revenue",
-           "scale": {
-            "type": "pow",
-            "exponent": 0.5,
-            "nice": true
-          },
-          "axis": {
-            "format": ".0f"
+      "layer": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "temporal",
+              "title": "Year",
+              "timeUnit": "year"
+            },
+            "y": {
+              "field": "tax revenue",
+              "type": "quantitative",
+              "title": "Tax Revenue",
+              "scale": {
+                "type": "pow",
+                "exponent": 0.5,
+                "nice": true
+              },
+              "axis": {
+                "format": ".0f"
+              }
+            },
+            "color": {
+              "field": "Country",
+              "type": "nominal",
+              "title": "Country",
+              "scale": {
+                "domain": [
+                  "Malaysia",
+                  "Kuwait",
+                  "Suadi Arabia",
+                  "Kazakhastan",
+                  "Nigeria",
+                  "Brazil",
+                  "Russain Federation"
+                ],
+                "range": [
+                  "#1f77b4",
+                  "#ff7f0e",
+                  "#dbdb44",
+                  "#d62728",
+                  "#9467bd",
+                  "#8c564b",
+                  "#e377c2"
+                ]
+              }
+            }
           }
         },
-        "color": {
-          "field": "Country",
-          "type": "nominal",
-          "title": "Country",
-          "scale": {
-            "domain": [
-              "Malaysia",
-              "Kuwait",
-              "Suadi Arabia",
-              "Kazakhastan",
-              "Nigeria",
-              "Brazil",
-              "Russain Federation"
-            ],
-            "range": [
-              "#1f77b4",
-              "#ff7f0e",
-              "#dbdb44",
-              "#d62728",
-              "#9467bd",
-              "#8c564b",
-              "#e377c2"
+        {
+          "mark": "circle",
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "temporal",
+              "timeUnit": "year"
+            },
+            "y": {
+              "field": "tax revenue",
+              "type": "quantitative"
+            },
+            "color": {
+              "field": "Country",
+              "type": "nominal"
+            },
+            "tooltip": [
+              {"field": "Country", "type": "nominal"},
+              {"field": "Year", "title":"Year","type": "temporal", "timeUnit": "year"},
+              {"field": "Oil Rent", "type": "quantitative"}
             ]
           }
-        },
-        "tooltip": [
-          {"field": "Country", "type": "nominal"},
-          {"field": "Year", "type": "temporal","timeUnit": "year"},
-          {"field": "tax revenue", "type": "quantitative"}
-        ]
-      }
+        }
+      ]
     },
     {
       "title": "PGEB% per Year by Country",
       "width": 250, 
       "height": 200,
-      "mark": "line",
-      "encoding": {
-        "x": {
-          "field": "Year",
-          "type": "temporal",
-          "title": "Year",
-          "timeUnit": "year"
-        },
-        "y": {
-          "field": "PGEB",
-          "type": "quantitative",
-          "title": "Primary Government Expenditure Budget"
-        },
-        "color": {
-          "field": "Country",
-          "type": "nominal",
-          "title": "Country",
-          "scale": {
-            "domain": [
-              "Malaysia",
-              "Kuwait",
-              "Suadi Arabia",
-              "Kazakhastan",
-              "Nigeria",
-              "Brazil",
-              "Russain Federation"
-            ],
-            "range": [
-              "#1f77b4",
-              "#ff7f0e",
-              "#dbdb44",
-              "#d62728",
-              "#9467bd",
-              "#8c564b",
-              "#e377c2"
-            ]
+      "layer": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "temporal",
+              "title": "Year",
+              "timeUnit": "year"
+            },
+            "y": {
+              "field": "PGEB",
+              "type": "quantitative",
+              "title": "Primary Government Expenditure Budget"
+            },
+            "color": {
+              "field": "Country",
+              "type": "nominal",
+              "title": "Country",
+              "scale": {
+                "domain": [
+                  "Malaysia",
+                  "Kuwait",
+                  "Suadi Arabia",
+                  "Kazakhastan",
+                  "Nigeria",
+                  "Brazil",
+                  "Russain Federation"
+                ],
+                "range": [
+                  "#1f77b4",
+                  "#ff7f0e",
+                  "#dbdb44",
+                  "#d62728",
+                  "#9467bd",
+                  "#8c564b",
+                  "#e377c2"
+                ]
+              }
+            }
           }
         },
-        "tooltip": [
-          {"field": "Country", "type": "nominal"},
-          {"field": "Year", "type": "temporal","timeUnit": "year"},
-          {"field": "PGEB", "type": "quantitative"}
-        ]
-      }
+        {
+          "mark": "circle",
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "temporal",
+              "timeUnit": "year"
+            },
+            "y": {
+              "field": "PGEB",
+              "type": "quantitative"
+            },
+            "color": {
+              "field": "Country",
+              "type": "nominal"
+            },
+            "tooltip": [
+              {"field": "Country", "type": "nominal"},
+              {"field": "Year", "title":"Year","type": "temporal", "timeUnit": "year"},
+              {"field": "Oil Rent", "type": "quantitative"}
+            ]
+          }
+        }
+      ]
     }
   ]
 }
