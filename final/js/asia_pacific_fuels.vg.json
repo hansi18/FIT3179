@@ -46,7 +46,7 @@
         "y": {
           "field": "production",
           "type": "quantitative",
-          "title": "Crude Oil Production (TJ)"
+          "title": "Crude Oil Production (in Terajoule)"
         }
       }
     },
@@ -69,6 +69,54 @@
           {"field": "ISO3", "type": "nominal", "title": "Country"},
           {"field": "production", "type": "quantitative", "title": "Oil Production (TJ)"},{"field": "rank", "type": "quantitative", "title": "Rank"}
         ]
+      }
+    },
+        {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dy": 60,
+        "dx":200,
+        "fontSize": 12,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {
+          "value": "Malaysia stands 4th in asia pacific region and"
+        },
+        "color": {"value": "gray"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Fuel Type'] == 'Natural Gas' && datum['Year'] == 2000",
+            "value": 1
+          },
+          "value": 0.3
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dy": 80,
+        "dx":130,
+        "fontSize": 12,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {
+          "value": "2nd in southeast asian countries"
+        },
+        "color": {"value": "gray"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Fuel Type'] == 'Natural Gas' && datum['Year'] == 2000",
+            "value": 1
+          },
+          "value": 0.3
+        }
       }
     }
   ]
