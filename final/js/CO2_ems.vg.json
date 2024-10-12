@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 400,
-  "height": 400,
+  "title": "CO2 Emission per Capita (Tonnes)",
+  "width": 300,
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/hansi18/FIT3179/refs/heads/main/final/data/CO2%20ems.csv",
     "format": {"type": "csv"}
